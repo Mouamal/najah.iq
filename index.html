@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>نتائج الامتحانات - منصة نجاح</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #0066cc;
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      background-color: #e8f4fd;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+      text-align: right;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #d0e4f7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>نتائج السادس الإعدادي - منصة نجاح</h1>
+    <p>أدخل الرمز السري لعرض نتيجتك</p>
+    <input type="password" id="secretCode" placeholder="ادخل الرقم السري" />
+    <button onclick="checkResult()">عرض النتيجة</button>
+    <div class="result" id="resultBox">
+      <h3>نتيجتك:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>المادة</th>
+            <th>الدرجة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>التربية الإسلامية</td><td>62</td></tr>
+          <tr><td>العربية</td><td>—</td></tr>
+          <tr><td>الإنجليزية</td><td>—</td></tr>
+          <tr><td>الرياضيات</td><td>—</td></tr>
+          <tr><td>الكيمياء</td><td>—</td></tr>
+          <tr><td>الفيزياء</td><td>—</td></tr>
+          <tr><td>الأحياء</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function checkResult() {
+      const code = document.getElementById('secretCode').value.trim();
+      if (code === '123456') {
+        document.getElementById('resultBox').style.display = 'block';
+      } else {
+        alert('الرمز السري غير صحيح، حاول مرة أخرى.');
+      }
+    }
+  </script>
+</body>
+</html>
